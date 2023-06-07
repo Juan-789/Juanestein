@@ -1,46 +1,15 @@
-package main;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-public class KeyHandler implements  KeyListener{
+package entity;
 
-    public boolean upPressed, downPressed, leftPressed, rightPressed;
+import java.awt.image.BufferedImage;
 
-    @Override
-    public void keyTyped(KeyEvent e){
-    }
+public class Entity {
 
-    @Override
-    public void keyPressed(KeyEvent e){
-        int code = e.getKeyCode();  //get k of the number pressed
-        if (code ==KeyEvent.VK_W){
-            upPressed = true;
-        }
-        if (code ==KeyEvent.VK_S){
-            downPressed = true;
-        }
-        if (code ==KeyEvent.VK_A){
-            leftPressed = true;
-        }
-        if (code ==KeyEvent.VK_D){
-            rightPressed = true;
-        }
-    }
+    public int x, y;
+    public int speed;
 
-    @Override
-    public void keyReleased(KeyEvent e) {
-        int code = e.getKeyCode();
-        if (code ==KeyEvent.VK_W){
-            upPressed = false;
-        }
-        if (code ==KeyEvent.VK_S){
-            downPressed = false;
-        }
-        if (code ==KeyEvent.VK_A){
-            leftPressed = false;
-        }
-        if (code ==KeyEvent.VK_D){
-            rightPressed = false;
-        }
-    }
+    public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+    public String direction;
 
+    public int spriteCounter = 0;
+    public int spriteNum = 1;
 }
